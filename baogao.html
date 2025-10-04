@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神农·上党寻源记 - 文化产业发展报告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4513',
+                        secondary: '#D2691E',
+                        accent: '#CD853F',
+                        gold: '#DAA520',
+                        sage: '#9ACD32',
+                        earth: '#A0522D'
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+            .bg-gradient-earth {
+                background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
+            }
+            .bg-gradient-gold {
+                background: linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #B8860B 100%);
+            }
+            .scroll-smooth {
+                scroll-behavior: smooth;
+            }
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 scroll-smooth">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="images/logo.png" alt="神农IP形象" class="h-10 w-10 rounded-full">
+                    <span class="text-xl font-bold text-primary">神农·上党寻源记</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#summary" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">报告摘要</a>
+                    <a href="#strategy" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">战略背景</a>
+                    <a href="#culture" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">文化价值</a>
+                    <a href="#industry" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">产业规划</a>
+                    <a href="#benefits" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">效益分析</a>
+                    <a href="#implementation" class="text-gray-700 hover:text-primary transition-colors duration-200 font-medium">实施保障</a>
+                </div>
+                <button class="md:hidden text-gray-700 hover:text-primary" id="mobile-menu-btn">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#summary" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200">报告摘要</a>
+                <a href="#strategy" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200">战略背景</a>
+                <a href="#culture" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200">文化价值</a>
+                <a href="#industry" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200">产业规划</a>
+                <a href="#benefits" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200">效益分析</a>
+                <a href="#implementation" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-200">实施保障</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/06.png" alt="神农教民耕种" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-shadow animate-fade-in">神农·上党寻源记</h1>
+            <h2 class="text-2xl md:text-3xl font-light mb-8 text-shadow">文化产业发展报告</h2>
+            <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed text-shadow">
+                以神农文化为核心，打造长治市世界级文化名片，实现文化传承、产业振兴、民生改善三位一体的综合发展目标
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#summary" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    开始阅读 <i class="fa fa-arrow-down ml-2"></i>
+                </a>
+                <a href="#benefits" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105">
+                    核心成果 <i class="fa fa-chart-line ml-2"></i>
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fa fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- 报告摘要 -->
+    <section id="summary" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">报告摘要</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    项目以神农文化为核心，打造长治市世界级文化名片，实现文化传承、产业振兴、民生改善三位一体的综合发展目标
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-gradient-to-br from-sage/10 to-sage/20 p-8 rounded-2xl text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-line-chart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-sage mb-2">5年总产值</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-2">20亿元</p>
+                    <p class="text-gray-600">直接产值5亿+产业链带动15亿</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-secondary/10 to-secondary/20 p-8 rounded-2xl text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-secondary mb-2">就业带动</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-2">5000+</p>
+                    <p class="text-gray-600">直接就业500人,间接就业5000人</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gold/10 to-gold/20 p-8 rounded-2xl text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-map-marker text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gold mb-2">游客量</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-2">50万</p>
+                    <p class="text-gray-600">年接待游客50万人次</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-primary/10 to-primary/20 p-8 rounded-2xl text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-2">品牌价值</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-2">标杆</p>
+                    <p class="text-gray-600">成为全国文化产业标杆</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 神农八大功绩 -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">神农八大功绩</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 lg:order-1">
+                    <img src="images/gongji.jpg" alt="神农功绩展示" class="w-full rounded-2xl shadow-2xl">
+                </div>
+                <div class="order-1 lg:order-2 space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-primary mb-2">教民耕种</h3>
+                        <p class="text-gray-600">开创农耕文明，教导民众种植五谷，奠定了中华文明的农业基础</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-secondary mb-2">尝百草</h3>
+                        <p class="text-gray-600">创立医药学，亲尝百草，辨别药物功效，拯救百姓疾苦</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-gold mb-2">定度量衡</h3>
+                        <p class="text-gray-600">建立标准体系，统一度量衡，促进社会公平交易</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <h3 class="text-xl font-bold text-sage mb-2">创音律</h3>
+                        <p class="text-gray-600">发明音乐艺术，创作五弦琴，丰富了人们的精神文化生活</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 战略背景与政策支撑 -->
+    <section id="strategy" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">战略背景与政策支撑</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    项目深度契合国家战略，获得多重政策支持，具备良好的发展环境
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="space-y-8">
+                    <div class="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-xl border-l-4 border-red-500">
+                        <h3 class="text-xl font-bold text-red-700 mb-3">文化强国战略</h3>
+                        <p class="text-gray-700">挖掘炎黄文化根脉，增强文化自信，向世界讲好中国故事</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-xl border-l-4 border-green-500">
+                        <h3 class="text-xl font-bold text-green-700 mb-3">乡村振兴战略</h3>
+                        <p class="text-gray-700">以文化带动农业，实现产业融合发展，提升农产品附加值</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold text-blue-700 mb-3">中医药传承发展</h3>
+                        <p class="text-gray-700">神农本草经是中医药理论源头，符合"大健康"产业发展方向</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-xl border-l-4 border-purple-500">
+                        <h3 class="text-xl font-bold text-purple-700 mb-3">文旅融合发展</h3>
+                        <p class="text-gray-700">内容+产品+文旅三位一体，创新文旅融合模式</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="images/zhixu.png" alt="神农建立社会秩序" class="w-full rounded-xl shadow-lg">
+                    <img src="images/huobi.png" alt="神农发明货币" class="w-full rounded-xl shadow-lg">
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">政策支持力度</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-gold to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-star text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-4">国家级政策</h4>
+                        <ul class="text-gray-600 space-y-2 text-left">
+                            <li>• 有机旱作农业示范省</li>
+                            <li>• 乡村振兴示范县</li>
+                            <li>• 全域旅游示范区</li>
+                            <li>• 中医药传承发展试点</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-secondary to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-bullseye text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-4">省级政策</h4>
+                        <ul class="text-gray-600 space-y-2 text-left">
+                            <li>• 文化产业发展专项资金</li>
+                            <li>• 文旅发展专项资金</li>
+                            <li>• 乡村振兴专项资金</li>
+                            <li>• 预计支持5000万-1亿</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-gradient-to-br from-sage to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-building text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-4">市级政策</h4>
+                        <ul class="text-gray-600 space-y-2 text-left">
+                            <li>• 设立专项发展资金</li>
+                            <li>• 优先保障项目用地</li>
+                            <li>• 税收优惠政策</li>
+                            <li>• 纳入重点项目规划</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化价值与资源优势 -->
+    <section id="culture" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">文化价值与资源优势</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    神农文化具有深厚的历史底蕴和独特的资源优势，为项目发展提供坚实基础
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-history text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">历史文化价值</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li>• 《汉书·律历志》等文献支撑</li>
+                        <li>• 柿子滩遗址等考古实证</li>
+                        <li>• 上党是华夏农耕文明重要发源地</li>
+                        <li>• 具备申报世界文化遗产基础条件</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-secondary mb-4">精神文化价值</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li>• 科学精神：实践出真知</li>
+                        <li>• 牺牲精神：为民试毒</li>
+                        <li>• 创新精神：发明创造</li>
+                        <li>• 民本精神：重视农业</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gold mb-4">教育传承价值</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li>• 展示中华文明成就</li>
+                        <li>• 促进文明交流互鉴</li>
+                        <li>• 培养文化自信</li>
+                        <li>• 传承优秀传统文化</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">核心资源优势</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h4 class="text-xl font-bold text-primary mb-6">完整的遗址群</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-4 h-4 bg-primary rounded-full"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">羊头山神农洞</p>
+                                    <p class="text-gray-600">神农诞生地 <span class="text-sm text-gray-500">沁源县</span></p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-4 h-4 bg-secondary rounded-full"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">老顶山神农洞</p>
+                                    <p class="text-gray-600">尝百草遗址 <span class="text-sm text-gray-500">长治市区</span></p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-4 h-4 bg-gold rounded-full"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">滴谷寺</p>
+                                    <p class="text-gray-600">得嘉禾之地 <span class="text-sm text-gray-500">上党区</span></p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-4 h-4 bg-sage rounded-full"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">高平炎帝陵</p>
+                                    <p class="text-gray-600">神农安葬地 <span class="text-sm text-gray-500">高平市</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-primary/10 rounded-lg">
+                            <p class="text-gray-700 italic">
+                                "从出生→试炼→创业→牺牲→安葬，形成完整故事线，这是湖南、陕西等地不具备的独特优势"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="images/tianshu.png" alt="神农解读天书" class="w-full rounded-xl shadow-lg">
+                        <img src="images/chancao.png" alt="神农尝百草" class="w-full rounded-xl shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 神农传奇故事 -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">神农传奇故事</h2>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <img src="images/huozai.png" alt="神农火灾危机" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">火灾危机</h3>
+                        <p class="text-gray-200">勇敢面对自然灾害，带领民众重建家园</p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <img src="images/shenao.png" alt="神农IP形象" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">神农IP形象</h3>
+                        <p class="text-gray-200">现代化文化表达，传承神农精神</p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                    <img src="images/shichang.png" alt="神农建立市场" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 text-white">
+                        <h3 class="text-xl font-bold mb-2">建立市场</h3>
+                        <p class="text-gray-200">开创商业文明，促进物资交流</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产业规划与布局 -->
+    <section id="industry" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">产业规划与布局</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    构建以神农文化为核心的完整产业链，实现文化价值向经济价值的转化
+                </p>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">总体定位</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="col-span-1">
+                        <div class="bg-gradient-to-br from-primary to-earth p-8 rounded-2xl text-white text-center">
+                            <h4 class="text-xl font-bold mb-4">一个核心</h4>
+                            <p class="font-semibold">神农文化世界级IP</p>
+                        </div>
+                    </div>
+                    <div class="col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-br from-sage/20 to-green-200 p-6 rounded-xl">
+                            <h4 class="text-lg font-bold text-sage mb-3">文化内容产业</h4>
+                            <p class="text-gray-600">短视频、纪录片、出版物</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-gold/20 to-yellow-200 p-6 rounded-xl">
+                            <h4 class="text-lg font-bold text-gold mb-3">文创产品产业</h4>
+                            <p class="text-gray-600">养生茶、五谷食品、文创商品</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-secondary/20 to-orange-200 p-6 rounded-xl">
+                            <h4 class="text-lg font-bold text-secondary mb-3">文化旅游产业</h4>
+                            <p class="text-gray-600">文旅体验、研学旅行、主题活动</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">分期建设规划</h3>
+                <div class="relative">
+                    <!-- 时间线 -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gold"></div>
+                    
+                    <!-- 第一期 -->
+                    <div class="relative flex items-center mb-16">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-green-50 p-6 rounded-xl">
+                                <h4 class="text-xl font-bold text-green-700 mb-2">第一期 (2025-2026)</h4>
+                                <p class="text-lg font-semibold text-gray-900 mb-4">试点示范期</p>
+                                <ul class="text-gray-600 space-y-2 text-left">
+                                    <li>• 内容制作：10集系列短片</li>
+                                    <li>• 产品开发：5款核心产品</li>
+                                    <li>• 体验项目：一日游线路</li>
+                                    <li>• 投资规模：110万</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-green-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-green-700 mb-3">预期成果</h5>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• 短视频播放量5000万+</li>
+                                    <li>• 产品销售额240万</li>
+                                    <li>• 游客量5000人次</li>
+                                    <li>• 品牌知名度(山西省内)：30%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二期 -->
+                    <div class="relative flex items-center mb-16">
+                        <div class="w-1/2 pr-8">
+                            <div class="bg-blue-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-blue-700 mb-3">预期成果</h5>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• 纪录片央视播出</li>
+                                    <li>• 产品销售额1500万</li>
+                                    <li>• 游客量10万人次</li>
+                                    <li>• 品牌知名度(全国)：10%</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="w-1/2 pl-8 text-left">
+                            <div class="bg-blue-50 p-6 rounded-xl">
+                                <h4 class="text-xl font-bold text-blue-700 mb-2">第二期 (2027-2028)</h4>
+                                <p class="text-lg font-semibold text-gray-900 mb-4">提质扩容期</p>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li>• 内容升级：6集纪录片</li>
+                                    <li>• 产品扩展：15款SKU</li>
+                                    <li>• 场馆建设：沁食源馆(1500平米)</li>
+                                    <li>• 投资规模：1000万</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第三期 -->
+                    <div class="relative flex items-center">
+                        <div class="w-1/2 pr-8 text-right">
+                            <div class="bg-purple-50 p-6 rounded-xl">
+                                <h4 class="text-xl font-bold text-purple-700 mb-2">第三期 (2029-2030)</h4>
+                                <p class="text-lg font-semibold text-gray-900 mb-4">品牌输出期</p>
+                                <ul class="text-gray-600 space-y-2 text-left">
+                                    <li>• 神农文化产业园(10万平米)</li>
+                                    <li>• 全国连锁体验店</li>
+                                    <li>• 国际传播(海外华人市场)</li>
+                                    <li>• 投资规模：5000万-1亿</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="w-1/2 pl-8">
+                            <div class="bg-purple-50 p-6 rounded-xl">
+                                <h5 class="font-bold text-purple-700 mb-3">预期成果</h5>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• 年产值5亿+</li>
+                                    <li>• 游客量50万人次</li>
+                                    <li>• 成为国家级文化产业示范项目</li>
+                                    <li>• 启动世遗申报程序</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">产业链构建</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-cogs text-white text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-blue-700">上游产业链</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">文化研究</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 成立神农文化研究院</li>
+                                    <li>• 联合高校研究机构</li>
+                                    <li>• 申报社科基金项目</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">内容创作</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 引进优质制作团队</li>
+                                    <li>• 培育本地创意人才</li>
+                                    <li>• 建设素材库</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">原料供应</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 有机农业基地</li>
+                                    <li>• 中药材种植基地</li>
+                                    <li>• 扶持农民合作社</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-industry text-white text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-green-700">中游产业链</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">产品制造</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 食品加工</li>
+                                    <li>• 文创生产</li>
+                                    <li>• 建设产业园</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">内容生产</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 短视频制作</li>
+                                    <li>• 图书出版</li>
+                                    <li>• 音乐戏剧创作</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">旅游服务</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 景区运营</li>
+                                    <li>• 主题活动策划</li>
+                                    <li>• 研学旅行服务</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fa fa-rocket text-white text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-purple-700">下游产业链</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">销售渠道</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 线上电商平台</li>
+                                    <li>• 线下门店网络</li>
+                                    <li>• 景区商店</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">品牌传播</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 新媒体矩阵</li>
+                                    <li>• 传统媒体合作</li>
+                                    <li>• 国际文化交流</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-gray-900 mb-2">衍生产业</h5>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• 住宿餐饮</li>
+                                    <li>• 交通运输</li>
+                                    <li>• 文化培训</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 经济社会效益分析 -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">经济社会效益分析</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    项目将产生显著的经济社会效益，实现文化价值与经济价值的有机统一
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-green-700 mb-6">直接经济效益 (5年累计)</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">产品销售</span>
+                            <span class="font-bold text-green-700">15,000万元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">文旅收入</span>
+                            <span class="font-bold text-green-700">12,000万元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">内容授权</span>
+                            <span class="font-bold text-green-700">3,000万元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">政府项目</span>
+                            <span class="font-bold text-green-700">5,000万元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">社会投资收益</span>
+                            <span class="font-bold text-green-700">15,000万元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-green-500 rounded-lg text-white font-bold text-lg">
+                            <span>总计</span>
+                            <span>50,000万元</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-6">产业带动效益 (5年累计)</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">农业</span>
+                            <span class="font-bold text-blue-700">3亿元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">食品加工</span>
+                            <span class="font-bold text-blue-700">2亿元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">文创制造</span>
+                            <span class="font-bold text-blue-700">1亿元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">旅游服务</span>
+                            <span class="font-bold text-blue-700">8亿元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-white rounded-lg">
+                            <span class="text-gray-700">文化服务</span>
+                            <span class="font-bold text-blue-700">1亿元</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-blue-500 rounded-lg text-white font-bold text-lg">
+                            <span>总计带动产值</span>
+                            <span>15亿元</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">收入来源构成</h3>
+                    <div class="relative h-80">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">产业带动分析</h3>
+                    <div class="relative h-80">
+                        <canvas id="industryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-2xl text-center">
+                    <div class="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">就业带动</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-4">5,500+</p>
+                    <p class="text-gray-600 mb-2">总就业岗位</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• 直接就业：500人</li>
+                        <li>• 间接就业：5,000人</li>
+                        <li>• 农民年增收：1.3亿+</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl text-center">
+                    <div class="w-20 h-20 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-book text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">文化传承</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-4">100万+</p>
+                    <p class="text-gray-600 mb-2">年受众人次</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• 非遗项目保护传承</li>
+                        <li>• 培养传承人50人</li>
+                        <li>• 建设传习所5处</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl text-center">
+                    <div class="w-20 h-20 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">品牌价值</h3>
+                    <p class="text-3xl font-bold text-gray-900 mb-4">50-100亿</p>
+                    <p class="text-gray-600 mb-2">预计品牌价值</p>
+                    <ul class="text-gray-600 text-sm space-y-1">
+                        <li>• 确立城市品牌定位</li>
+                        <li>• 央视卫视报道</li>
+                        <li>• 成为文化旅游目的地</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-gradient-earth p-8 rounded-2xl text-white text-center">
+                <h3 class="text-3xl font-bold mb-6">综合效益总结</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <p class="text-4xl font-bold mb-2">20亿元</p>
+                        <p class="text-lg">5年综合产值</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-bold mb-2">5,500+</p>
+                        <p class="text-lg">就业岗位</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-bold mb-2">50万</p>
+                        <p class="text-lg">年游客量</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-bold mb-2">标杆</p>
+                        <p class="text-lg">全国文化产业</p>
+                    </div>
+                </div>
+                <p class="text-xl leading-relaxed max-w-4xl mx-auto">
+                    项目将成为长治市文化产业发展的新引擎，实现文化传承、产业振兴、民生改善的有机统一，为建设文化强国、实施乡村振兴战略贡献"长治力量"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实施保障措施 -->
+    <section id="implementation" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">实施保障措施</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    建立完善的组织保障、政策保障和制度保障体系，确保项目顺利实施
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-sitemap text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-700">组织保障</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">领导机制</h4>
+                            <p class="text-gray-600 text-sm">成立由市委书记或市长任组长的领导小组，统筹推进项目建设</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">实施主体</h4>
+                            <p class="text-gray-600 text-sm">采用政府主导、企业运作、社会资本参与的模式</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">协调机制</h4>
+                            <p class="text-gray-600 text-sm">建立部门协同、市县联动的工作机制</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-balance-scale text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-700">政策保障</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">财政支持</h4>
+                            <p class="text-gray-600 text-sm">设立专项发展资金，每年1000万，连续5年</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">土地政策</h4>
+                            <p class="text-gray-600 text-sm">优先保障项目用地指标，享受文化旅游用地优惠政策</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">税收优惠</h4>
+                            <p class="text-gray-600 text-sm">享受文化企业税收优惠政策，前3年免征企业所得税</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-check-circle text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-700">制度保障</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">规划衔接</h4>
+                            <p class="text-gray-600 text-sm">纳入长治市"十五五"规划和各类专项规划</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">标准规范</h4>
+                            <p class="text-gray-600 text-sm">制定产品标准、服务标准和品牌使用规范</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2">考核监督</h4>
+                            <p class="text-gray-600 text-sm">建立年度考核机制，确保项目落地见效</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">风险防控</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="border-l-4 border-red-500 bg-red-50 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-red-700 mb-2">市场风险</h4>
+                        <p class="text-gray-600 text-sm mb-2">市场接受度不高，产品滞销</p>
+                        <ul class="text-gray-600 text-xs space-y-1">
+                            <li>• 加强市场调研</li>
+                            <li>• 分阶段投入</li>
+                            <li>• 建立退出机制</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-orange-500 bg-orange-50 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-orange-700 mb-2">资金风险</h4>
+                        <p class="text-gray-600 text-sm mb-2">投资规模大，回收周期长</p>
+                        <ul class="text-gray-600 text-xs space-y-1">
+                            <li>• 多元化融资</li>
+                            <li>• 严格成本控制</li>
+                            <li>• 确保现金流</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-yellow-500 bg-yellow-50 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-yellow-700 mb-2">人才风险</h4>
+                        <p class="text-gray-600 text-sm mb-2">专业人才缺乏，团队不稳定</p>
+                        <ul class="text-gray-600 text-xs space-y-1">
+                            <li>• 引进专业人才</li>
+                            <li>• 加强人才培养</li>
+                            <li>• 建立激励机制</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-blue-500 bg-blue-50 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-blue-700 mb-2">政策风险</h4>
+                        <p class="text-gray-600 text-sm mb-2">政策变化影响项目实施</p>
+                        <ul class="text-gray-600 text-xs space-y-1">
+                            <li>• 密切关注政策</li>
+                            <li>• 加强政府沟通</li>
+                            <li>• 及时调整策略</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-green-500 bg-green-50 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-green-700 mb-2">环境风险</h4>
+                        <p class="text-gray-600 text-sm mb-2">对生态环境造成影响</p>
+                        <ul class="text-gray-600 text-xs space-y-1">
+                            <li>• 生态保护优先</li>
+                            <li>• 绿色发展理念</li>
+                            <li>• 可持续发展</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="border-l-4 border-purple-500 bg-purple-50 p-4 rounded-r-lg">
+                        <h4 class="font-bold text-purple-700 mb-2">文化风险</h4>
+                        <p class="text-gray-600 text-sm mb-2">文化传承与商业开发平衡</p>
+                        <ul class="text-gray-600 text-xs space-y-1">
+                            <li>• 坚持文化为本</li>
+                            <li>• 专家把关审核</li>
+                            <li>• 社会监督</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="images/logo.png" alt="神农IP形象" class="h-12 w-12 rounded-full">
+                        <span class="text-2xl font-bold">神农·上党寻源记</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        以神农文化为核心，打造长治市世界级文化名片，实现文化传承、产业振兴、民生改善三位一体的综合发展目标。
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">快速导航</h3>
+                    <div class="space-y-3">
+                        <a href="#summary" class="block text-gray-400 hover:text-white transition-colors duration-200">报告摘要</a>
+                        <a href="#strategy" class="block text-gray-400 hover:text-white transition-colors duration-200">战略背景</a>
+                        <a href="#culture" class="block text-gray-400 hover:text-white transition-colors duration-200">文化价值</a>
+                        <a href="#industry" class="block text-gray-400 hover:text-white transition-colors duration-200">产业规划</a>
+                        <a href="#benefits" class="block text-gray-400 hover:text-white transition-colors duration-200">效益分析</a>
+                        <a href="#implementation" class="block text-gray-400 hover:text-white transition-colors duration-200">实施保障</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6">联系信息</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa fa-map-marker text-gray-400"></i>
+                            <span class="text-gray-400">山西省长治市</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa fa-envelope text-gray-400"></i>
+                            <span class="text-gray-400">shennong@changzhi.gov.cn</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa fa-phone text-gray-400"></i>
+                            <span class="text-gray-400">0355-1234567</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 神农·上党寻源记文化产业发展项目组. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full shadow-lg transition-all duration-300 transform scale-0">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // 关闭移动端菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const backToTop = document.getElementById('back-to-top');
+            
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-white/98');
+                nav.classList.remove('bg-white/95');
+                backToTop.classList.remove('scale-0');
+                backToTop.classList.add('scale-100');
+            } else {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/98');
+                backToTop.classList.add('scale-0');
+                backToTop.classList.remove('scale-100');
+            }
+            
+            // 导航高亮
+            const sections = document.querySelectorAll('section[id]');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('text-primary', 'font-bold');
+                link.classList.add('text-gray-700');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('text-primary', 'font-bold');
+                    link.classList.remove('text-gray-700');
+                }
+            });
+        });
+
+        // 返回顶部
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // 观察所有需要动画的元素
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // 收入来源构成饼图
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['产品销售', '文旅收入', '内容授权', '政府项目', '社会投资收益'],
+                datasets: [{
+                    data: [15000, 12000, 3000, 5000, 15000],
+                    backgroundColor: [
+                        '#10B981',
+                        '#3B82F6',
+                        '#8B5CF6',
+                        '#F59E0B',
+                        '#EF4444'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    }
+                }
+            }
+        });
+
+        // 产业带动分析柱状图
+        const industryCtx = document.getElementById('industryChart').getContext('2d');
+        new Chart(industryCtx, {
+            type: 'bar',
+            data: {
+                labels: ['农业', '食品加工', '文创制造', '旅游服务', '文化服务'],
+                datasets: [{
+                    label: '带动产值(亿元)',
+                    data: [3, 2, 1, 8, 1],
+                    backgroundColor: [
+                        '#10B981',
+                        '#3B82F6',
+                        '#8B5CF6',
+                        '#F59E0B',
+                        '#EF4444'
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#f3f4f6'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // 页面加载完成后的初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置初始状态
+            document.querySelector('nav').classList.add('bg-white/95');
+            
+            // 延迟显示英雄区域内容，营造动画效果
+            setTimeout(() => {
+                document.querySelector('.animate-fade-in').style.opacity = '1';
+                document.querySelector('.animate-fade-in').style.transform = 'translateY(0)';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
