@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神农·上党寻源记 - 商业计划书</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-shims.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#DC2626',
+                        secondary: '#059669',
+                        accent: '#D97706',
+                        earth: '#92400E',
+                        gold: '#F59E0B'
+                    },
+                    fontFamily: {
+                        chinese: ['PingFang SC', 'Microsoft YaHei', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .gradient-bg {
+                background: linear-gradient(135deg, #DC2626 0%, #059669 100%);
+            }
+            .card-shadow {
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .hover-scale {
+                transition: transform 0.3s ease;
+            }
+            .hover-scale:hover {
+                transform: scale(1.05);
+            }
+            .icon-spin {
+                animation: spin 2s linear infinite;
+            }
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+            .fade-in {
+                animation: fadeIn 0.6s ease-in;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .slide-in {
+                animation: slideIn 0.5s ease-out;
+            }
+            @keyframes slideIn {
+                from { transform: translateX(-100%); }
+                to { transform: translateX(0); }
+            }
+        }
+    </style>
+</head>
+<body class="font-chinese bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-lg transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo - 移除背景色，只保留透明图片 -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <img src="images/logo.png" 
+                             alt="神农透明背景IP形象" class="w-10 h-10 object-contain">
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">神农·上党寻源记</span>
+                </div>
+                
+                <!-- 桌面端导航 -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#executive-summary" class="text-gray-700 hover:text-primary transition-colors duration-300 nav-link">执行摘要</a>
+                    <a href="#market-analysis" class="text-gray-700 hover:text-primary transition-colors duration-300 nav-link">市场分析</a>
+                    <a href="#business-model" class="text-gray-700 hover:text-primary transition-colors duration-300 nav-link">商业模式</a>
+                    <a href="#financial-plan" class="text-gray-700 hover:text-primary transition-colors duration-300 nav-link">财务规划</a>
+                    <a href="#investment-highlights" class="text-gray-700 hover:text-primary transition-colors duration-300 nav-link">投资亮点</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-primary">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#executive-summary" class="block px-3 py-2 text-gray-700 hover:text-primary mobile-nav-link">执行摘要</a>
+                <a href="#market-analysis" class="block px-3 py-2 text-gray-700 hover:text-primary mobile-nav-link">市场分析</a>
+                <a href="#business-model" class="block px-3 py-2 text-gray-700 hover:text-primary mobile-nav-link">商业模式</a>
+                <a href="#financial-plan" class="block px-3 py-2 text-gray-700 hover:text-primary mobile-nav-link">财务规划</a>
+                <a href="#investment-highlights" class="block px-3 py-2 text-gray-700 hover:text-primary mobile-nav-link">投资亮点</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 - 神农八大功绩封面方案2 -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <div class="mb-8 fade-in">
+                <img src="images/gongji.jpg" 
+                     alt="神农八大功绩封面" class="w-80 h-80 mx-auto rounded-3xl card-shadow hover-scale object-cover">
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-shadow fade-in">神农·上党寻源记</h1>
+            <p class="text-xl md:text-2xl mb-8 text-shadow fade-in">将五千年神农文化打造成世界级文化IP</p>
+            <p class="text-lg md:text-xl mb-12 text-shadow fade-in max-w-2xl mx-auto">通过"内容+产品+文旅"三位一体模式，实现文化传承与商业价值的统一</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <a href="#executive-summary" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 hover-scale">开始探索</a>
+                <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all duration-300 hover-scale">投资机会</a>
+            </div>
+        </div>
+        
+        <!-- 滚动提示 -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fa fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- 执行摘要 -->
+    <section id="executive-summary" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">执行摘要</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">我们致力于将神农文化打造成世界级文化IP，通过创新的商业模式实现文化传承与商业价值的完美结合</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-2xl card-shadow">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">项目亮点</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <div>
+                                    <strong>独家文化资源：</strong>掌握羊头山、老顶山、炎帝陵等核心遗址
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <div>
+                                    <strong>已验证商业模式：</strong>对标故宫文创(年收入15亿)、湖南炎帝陵(年产值10亿+)
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <div>
+                                    <strong>政策红利叠加：</strong>文化强国+乡村振兴+中医药传承三大国家战略交汇点
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <div>
+                                    <strong>快速盈利能力：</strong>Year 2即实现正现金流，Year 5净利润预计2000万+
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa fa-check-circle text-secondary mt-1"></i>
+                                <div>
+                                    <strong>高回报预期：</strong>天使轮投资5年后预期回报50-80倍
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-green-400 to-green-600 text-white p-6 rounded-2xl text-center hover-scale">
+                            <div class="text-3xl font-bold mb-2">100万</div>
+                            <div class="text-sm opacity-90">天使轮融资</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-orange-400 to-orange-600 text-white p-6 rounded-2xl text-center hover-scale">
+                            <div class="text-3xl font-bold mb-2">10%</div>
+                            <div class="text-sm opacity-90">股权出让</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="images/06.png" 
+                         alt="神农农耕图" class="w-full rounded-3xl card-shadow hover-scale object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl"></div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <h4 class="text-xl font-bold mb-2">神农教民耕种</h4>
+                        <p class="text-sm opacity-90">传承千年农耕文明</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 市场分析 -->
+    <section id="market-analysis" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">市场分析</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">目标市场总规模达2.3万亿元，文化旅游、养生食品、研学旅行三大领域快速增长</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <!-- 市场规模分析 -->
+                <div class="bg-white p-8 rounded-2xl card-shadow">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">市场规模分析</h3>
+                    <div class="h-80">
+                        <canvas id="marketSizeChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 目标客群分布 -->
+                <div class="bg-white p-8 rounded-2xl card-shadow">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">目标客群分布</h3>
+                    <div class="h-80">
+                        <canvas id="customerChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 竞争分析 -->
+            <div class="bg-white p-8 rounded-2xl card-shadow">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">竞争分析</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b-2 border-gray-200">
+                                <th class="pb-4 font-bold text-gray-800">竞品</th>
+                                <th class="pb-4 font-bold text-gray-800">优势</th>
+                                <th class="pb-4 font-bold text-gray-800">劣势</th>
+                                <th class="pb-4 font-bold text-gray-800">差异化策略</th>
+                            </tr>
+                        </thead>
+                        <tbody class="space-y-4">
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 font-semibold">湖南炎帝陵</td>
+                                <td class="py-4">政府投入大，知名度高</td>
+                                <td class="py-4">重祭祀轻体验，产品单一</td>
+                                <td class="py-4 text-primary font-semibold">主打"文明探源"+"年轻化体验"</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 font-semibold">陕西黄帝陵</td>
+                                <td class="py-4">游客量大(300万/年)</td>
+                                <td class="py-4">同质化严重，缺乏创新</td>
+                                <td class="py-4 text-primary font-semibold">以"内容IP"驱动，而非传统景区</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 font-semibold">故宫文创</td>
+                                <td class="py-4">品牌强，渠道广</td>
+                                <td class="py-4">非炎黄文化，定位不同</td>
+                                <td class="py-4 text-primary font-semibold">聚焦神农细分赛道</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商业模式 -->
+    <section id="business-model" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">商业模式</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">"内容吸引 → 产品转化 → 体验升级 → 复购传播"的核心商业逻辑</p>
+            </div>
+            
+            <!-- 商业逻辑图 -->
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 space-y-8 md:space-y-0 md:space-x-4">
+                <div class="bg-gradient-to-br from-red-100 to-red-200 p-8 rounded-2xl text-center hover-scale flex-1">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-play-circle text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">内容吸引</h3>
+                    <p class="text-gray-600">短视频、纪录片</p>
+                </div>
+                
+                <i class="fa fa-arrow-right text-gray-400 text-2xl hidden md:block"></i>
+                
+                <div class="bg-gradient-to-br from-green-100 to-green-200 p-8 rounded-2xl text-center hover-scale flex-1">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-shopping-cart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">产品转化</h3>
+                    <p class="text-gray-600">养生茶、五谷食品</p>
+                </div>
+                
+                <i class="fa fa-arrow-right text-gray-400 text-2xl hidden md:block"></i>
+                
+                <div class="bg-gradient-to-br from-orange-100 to-orange-200 p-8 rounded-2xl text-center hover-scale flex-1">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-map-marker text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">体验升级</h3>
+                    <p class="text-gray-600">一日游、研学活动</p>
+                </div>
+                
+                <i class="fa fa-arrow-right text-gray-400 text-2xl hidden md:block"></i>
+                
+                <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 p-8 rounded-2xl text-center hover-scale flex-1">
+                    <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">复购传播</h3>
+                    <p class="text-gray-600">会员、社群运营</p>
+                </div>
+            </div>
+            
+            <!-- 神农传奇展示 -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <div class="relative group">
+                    <img src="images/shichang.png" 
+                         alt="神农传奇-市场建立" class="w-full h-64 object-cover rounded-2xl card-shadow hover-scale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">神农传奇·市场建立</h4>
+                            <p class="text-sm opacity-90">开创交易市场，建立商业秩序</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="images/zhixu.png" 
+                         alt="神农传奇-社会秩序" class="w-full h-64 object-cover rounded-2xl card-shadow hover-scale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">神农传奇·社会秩序</h4>
+                            <p class="text-sm opacity-90">建立社会组织，制定历法时序</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="images/shenao.png" 
+                         alt="神农传奇-植物共鸣" class="w-full h-64 object-cover rounded-2xl card-shadow hover-scale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">神农传奇·植物共鸣</h4>
+                            <p class="text-sm opacity-90">尝遍百草，开创医药先河</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 更多神农传奇故事 -->
+            <div class="grid lg:grid-cols-4 gap-6 mb-16">
+                <div class="relative group">
+                    <img src="images/tianshu.png" 
+                         alt="神农传奇-天书解读" class="w-full h-48 object-cover rounded-xl card-shadow hover-scale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h5 class="font-bold text-sm">天书解读</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="images/huozai.png" 
+                         alt="神农传奇-火灾危机" class="w-full h-48 object-cover rounded-xl card-shadow hover-scale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h5 class="font-bold text-sm">火灾危机</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="images/huobi.png" 
+                         alt="神农传奇-货币发明" class="w-full h-48 object-cover rounded-xl card-shadow hover-scale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h5 class="font-bold text-sm">货币发明</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <img src="images/chancao.png" 
+                         alt="神农传奇-智慧传承" class="w-full h-48 object-cover rounded-xl card-shadow hover-scale">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h5 class="font-bold text-sm">智慧传承</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 收入模型 -->
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-2xl card-shadow">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">收入模型</h3>
+                    <div class="h-80">
+                        <canvas id="revenueModelChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-2xl">
+                        <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="fa fa-shopping-bag text-primary mr-2"></i>
+                            产品销售 (40%)
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 养生茶系列：毛利率65%</li>
+                            <li>• 五谷食品：毛利率60%</li>
+                            <li>• 文创产品：毛利率70%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-2xl">
+                        <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="fa fa-map-marker text-secondary mr-2"></i>
+                            文旅体验 (35%)
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 一日游：毛利率55%</li>
+                            <li>• 沁食源馆：综合毛利率50%</li>
+                            <li>• 研学课程：毛利率60%</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-2xl">
+                        <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="fa fa-video-camera text-accent mr-2"></i>
+                            内容变现 (10%)
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 广告分成</li>
+                            <li>• 品牌合作</li>
+                            <li>• IP授权</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-2xl">
+                        <h4 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
+                            <i class="fa fa-building text-gold mr-2"></i>
+                            政府项目 (15%)
+                        </h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• 文化产业专项资金</li>
+                            <li>• 非遗保护资金</li>
+                            <li>• 乡村振兴资金</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 财务规划 -->
+    <section id="financial-plan" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">财务规划</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">稳健的财务预测，快速的盈利能力，可观的投资回报</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <!-- 营收预测 -->
+                <div class="bg-white p-8 rounded-2xl card-shadow">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">营收预测（万元）</h3>
+                    <div class="h-80">
+                        <canvas id="revenueForecastChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 利润预测 -->
+                <div class="bg-white p-8 rounded-2xl card-shadow">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">利润预测（万元）</h3>
+                    <div class="h-80">
+                        <canvas id="profitForecastChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 关键财务指标 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-2xl text-center hover-scale">
+                    <div class="text-3xl font-bold mb-2">5年</div>
+                    <div class="text-sm opacity-90">投资回收期</div>
+                </div>
+                <div class="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-2xl text-center hover-scale">
+                    <div class="text-3xl font-bold mb-2">50-80倍</div>
+                    <div class="text-sm opacity-90">预期回报倍数</div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-2xl text-center hover-scale">
+                    <div class="text-3xl font-bold mb-2">50-55%</div>
+                    <div class="text-sm opacity-90">综合毛利率</div>
+                </div>
+                <div class="bg-gradient-to-br from-red-500 to-red-600 text-white p-6 rounded-2xl text-center hover-scale">
+                    <div class="text-3xl font-bold mb-2">2000万+</div>
+                    <div class="text-sm opacity-90">Year5净利润</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 投资亮点 -->
+    <section id="investment-highlights" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">投资亮点</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">为什么选择投资神农·上党寻源记</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-2xl card-shadow hover-scale">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-bullseye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">独家文化IP</h3>
+                    <p class="text-gray-600 mb-4">拥有神农文化核心资源，五千年文明积淀，不可复制的文化资产</p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• 羊头山神农文化遗址</li>
+                        <li>• 老顶山炎帝文化景区</li>
+                        <li>• 炎帝陵祭祀文化</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl card-shadow hover-scale">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">快速增长潜力</h3>
+                    <p class="text-gray-600 mb-4">三位一体商业模式，多渠道收入来源，快速实现盈利</p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• Year2实现正现金流</li>
+                        <li>• Year3营收突破1000万</li>
+                        <li>• Year5净利润2000万+</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl card-shadow hover-scale">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-shield text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">政策红利加持</h3>
+                    <p class="text-gray-600 mb-4">多重国家战略支持，政策风险低，发展环境优越</p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>• 文化强国战略</li>
+                        <li>• 乡村振兴战略</li>
+                        <li>• 中医药传承发展</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">携手共创神农文化的美好未来</h2>
+                <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">诚邀有识之士加入我们，共同传承和发展神农文化</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- 联系信息 -->
+                <div class="space-y-8">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6">项目信息</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fa fa-bullseye text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">项目名称</div>
+                                    <div class="opacity-90">神农·上党寻源记</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fa fa-money text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">融资阶段</div>
+                                    <div class="opacity-90">天使轮 / A轮</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fa fa-map-marker text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">项目地址</div>
+                                    <div class="opacity-90">山西省长治市</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                                    <i class="fa fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">联系邮箱</div>
+                                    <div class="opacity-90">qiulu@apapa.cn</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 联系表单 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6">获取完整资料</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <input type="text" id="name" placeholder="您的姓名" 
+                                   class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors duration-300" required>
+                        </div>
+                        <div>
+                            <input type="tel" id="phone" placeholder="联系电话" 
+                                   class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors duration-300" required>
+                        </div>
+                        <div>
+                            <input type="email" id="email" placeholder="邮箱地址" 
+                                   class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors duration-300" required>
+                        </div>
+                        <div>
+                            <textarea id="message" rows="4" placeholder="备注信息" 
+                                      class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors duration-300 resize-none"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-white text-primary py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 hover-scale">
+                            提交申请
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 - 移除Logo背景色，只保留透明图片 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Logo和简介 -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="images/logo.png" 
+                                 alt="神农透明背景IP形象" class="w-10 h-10 object-contain">
+                        </div>
+                        <span class="text-xl font-bold">神农·上党寻源记</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">将五千年神农文化打造成世界级文化IP，实现文化传承与商业价值的统一。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fa fa-wechat"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fa fa-qq"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 快速导航 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">快速导航</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#executive-summary" class="hover:text-white transition-colors duration-300">执行摘要</a></li>
+                        <li><a href="#market-analysis" class="hover:text-white transition-colors duration-300">市场分析</a></li>
+                        <li><a href="#business-model" class="hover:text-white transition-colors duration-300">商业模式</a></li>
+                        <li><a href="#financial-plan" class="hover:text-white transition-colors duration-300">财务规划</a></li>
+                        <li><a href="#investment-highlights" class="hover:text-white transition-colors duration-300">投资亮点</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 核心价值 -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">核心价值</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>• 文化传承与创新</li>
+                        <li>• 商业价值与社会责任</li>
+                        <li>• 传统智慧与现代科技</li>
+                        <li>• 地方特色与全球视野</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 神农·上党寻源记. 保留所有权利. | 神农精神，永恒传承；上党文化，世界共享</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 opacity-0 pointer-events-none hover-scale">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <!-- 管理面板按钮 -->
+    <button id="adminPanelBtn" class="fixed top-24 right-8 w-14 h-14 bg-accent text-white rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300 hover-scale icon-spin">
+        <i class="fa fa-bullseye text-xl"></i>
+        <span class="absolute -top-8 right-0 bg-black text-white px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">管理面板 (Ctrl+M)</span>
+    </button>
+
+    <!-- 管理面板 -->
+    <div id="adminPanel" class="fixed top-0 left-0 w-80 h-full bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 z-50">
+        <div class="p-6 border-b border-gray-200">
+            <h3 class="text-xl font-bold text-gray-800 flex items-center justify-between">
+                <span>管理面板</span>
+                <button id="closeAdminPanel" class="text-gray-400 hover:text-gray-600">
+                    <i class="fa fa-times text-xl"></i>
+                </button>
+            </h3>
+        </div>
+        
+        <div class="p-6">
+            <!-- 登录状态 -->
+            <div id="loginStatus" class="mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-sm text-gray-600">登录状态：</span>
+                    <span id="loginIndicator" class="text-sm text-red-600">未登录</span>
+                </div>
+                <button id="loginBtn" class="w-full bg-primary text-white py-2 rounded-lg hover:bg-red-700 transition-colors duration-300">
+                    管理员登录
+                </button>
+            </div>
+            
+            <!-- 留言管理 -->
+            <div class="mb-6">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">留言管理</h4>
+                <div id="messageStats" class="bg-gray-50 p-4 rounded-lg mb-4">
+                    <p class="text-sm text-gray-600">总留言数：<span id="totalMessages">0</span></p>
+                </div>
+                
+                <div id="messagesList" class="space-y-3 max-h-64 overflow-y-auto">
+                    <!-- 留言列表将在这里显示 -->
+                    <p class="text-sm text-gray-500 text-center py-8">暂无留言数据</p>
+                </div>
+                
+                <!-- 导出按钮（登录后显示） -->
+                <button id="exportBtn" class="w-full mt-4 bg-secondary text-white py-2 rounded-lg hover:bg-green-700 transition-colors duration-300 opacity-50 cursor-not-allowed" disabled>
+                    导出留言数据
+                </button>
+            </div>
+            
+            <!-- 使用说明 -->
+            <div class="mt-8">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4">使用说明</h4>
+                <ul class="text-sm text-gray-600 space-y-2">
+                    <li>• Ctrl+M 快速打开面板</li>
+                    <li>• Esc 关闭面板</li>
+                    <li>• 管理员登录后可查看完整留言</li>
+                    <li>• 支持导出留言数据备份</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">管理员登录</h3>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <input type="text" id="adminUsername" placeholder="用户名" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300" required>
+                </div>
+                <div>
+                    <input type="password" id="adminPassword" placeholder="密码" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary transition-colors duration-300" required>
+                </div>
+                <div class="text-red-500 text-sm" id="loginError"></div>
+                <button type="submit" 
+                        class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300">
+                    登录
+                </button>
+            </form>
+            <button id="closeLoginModal" class="w-full mt-4 text-gray-600 hover:text-gray-800 transition-colors duration-300">
+                取消
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let isLoggedIn = false;
+        const ADMIN_USERNAME = 'admin';
+        const ADMIN_PASSWORD = 'shennong2024'; // 实际使用时应修改为更安全的密码
+        
+        // DOM 元素
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const backToTop = document.getElementById('backToTop');
+        const adminPanelBtn = document.getElementById('adminPanelBtn');
+        const adminPanel = document.getElementById('adminPanel');
+        const closeAdminPanel = document.getElementById('closeAdminPanel');
+        const contactForm = document.getElementById('contactForm');
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+        const loginForm = document.getElementById('loginForm');
+        const loginError = document.getElementById('loginError');
+        const loginIndicator = document.getElementById('loginIndicator');
+        const exportBtn = document.getElementById('exportBtn');
+        const messagesList = document.getElementById('messagesList');
+        const totalMessages = document.getElementById('totalMessages');
+        
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-white/98');
+                navbar.classList.remove('bg-white/95');
+            } else {
+                navbar.classList.add('bg-white/95');
+                navbar.classList.remove('bg-white/98');
+            }
+            
+            // 返回顶部按钮显示/隐藏
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+        
+        // 移动端菜单
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // 关闭移动端菜单
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // 返回顶部
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 管理面板
+        adminPanelBtn.addEventListener('click', toggleAdminPanel);
+        closeAdminPanel.addEventListener('click', toggleAdminPanel);
+        
+        // 快捷键
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'm') {
+                e.preventDefault();
+                toggleAdminPanel();
+            }
+            if (e.key === 'Escape' && !adminPanel.classList.contains('-translate-x-full')) {
+                toggleAdminPanel();
+            }
+        });
+        
+        function toggleAdminPanel() {
+            adminPanel.classList.toggle('-translate-x-full');
+            if (!adminPanel.classList.contains('-translate-x-full')) {
+                adminPanel.classList.add('slide-in');
+                loadMessages();
+            }
+        }
+        
+        // 登录功能
+        loginBtn.addEventListener('click', () => {
+            loginModal.classList.remove('hidden');
+        });
+        
+        closeLoginModal.addEventListener('click', () => {
+            loginModal.classList.add('hidden');
+            loginError.textContent = '';
+        });
+        
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+            
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                isLoggedIn = true;
+                loginModal.classList.add('hidden');
+                updateLoginStatus();
+                loadMessages();
+            } else {
+                loginError.textContent = '用户名或密码错误';
+            }
+        });
+        
+        function updateLoginStatus() {
+            if (isLoggedIn) {
+                loginIndicator.textContent = '已登录';
+                loginIndicator.className = 'text-sm text-green-600';
+                loginBtn.textContent = '退出登录';
+                exportBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                exportBtn.disabled = false;
+            } else {
+                loginIndicator.textContent = '未登录';
+                loginIndicator.className = 'text-sm text-red-600';
+                loginBtn.textContent = '管理员登录';
+                exportBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                exportBtn.disabled = true;
+            }
+        }
+        
+        // 处理退出登录
+        loginBtn.addEventListener('click', () => {
+            if (isLoggedIn) {
+                isLoggedIn = false;
+                updateLoginStatus();
+                loadMessages();
+            } else {
+                loginModal.classList.remove('hidden');
+            }
+        });
+        
+        // 留言管理
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem('messages') || '[]');
+            totalMessages.textContent = messages.length;
+            
+            if (messages.length === 0) {
+                messagesList.innerHTML = '<p class="text-sm text-gray-500 text-center py-8">暂无留言数据</p>';
+                return;
+            }
+            
+            messagesList.innerHTML = messages.map((msg, index) => `
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="space-y-1 text-sm">
+                        <div>姓名：${isLoggedIn ? msg.name : maskString(msg.name)}</div>
+                        <div>电话：${isLoggedIn ? msg.phone : maskPhone(msg.phone)}</div>
+                        <div>邮箱：${isLoggedIn ? msg.email : maskEmail(msg.email)}</div>
+                        <div>留言：${isLoggedIn ? msg.message : maskString(msg.message, 20)}</div>
+                        <div class="text-gray-400 text-xs mt-2">${new Date(msg.timestamp).toLocaleString()}</div>
+                    </div>
+                    ${isLoggedIn ? `
+                        <button onclick="deleteMessage(${index})" class="mt-2 text-red-500 hover:text-red-700 text-xs">
+                            <i class="fa fa-trash mr-1"></i>删除
+                        </button>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+        
+        // 数据脱敏函数
+        function maskString(str, maxLength = 10) {
+            if (!str) return '';
+            if (str.length <= 2) return str.charAt(0) + '*';
+            if (maxLength && str.length > maxLength) {
+                return str.substring(0, 2) + '*'.repeat(3) + str.substring(str.length - 2);
+            }
+            return str.substring(0, 1) + '*'.repeat(str.length - 2) + str.substring(str.length - 1);
+        }
+        
+        function maskPhone(phone) {
+            if (!phone) return '';
+            return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+        }
+        
+        function maskEmail(email) {
+            if (!email) return '';
+            const [username, domain] = email.split('@');
+            return maskString(username) + '@' + domain;
+        }
+        
+        // 删除留言
+        window.deleteMessage = function(index) {
+            if (!isLoggedIn) return;
+            
+            const messages = JSON.parse(localStorage.getItem('messages') || '[]');
+            messages.splice(index, 1);
+            localStorage.setItem('messages', JSON.stringify(messages));
+            loadMessages();
+        };
+        
+        // 导出留言数据
+        exportBtn.addEventListener('click', () => {
+            if (!isLoggedIn) return;
+            
+            const messages = JSON.parse(localStorage.getItem('messages') || '[]');
+            const csvContent = "data:text/csv;charset=utf-8," 
+                + "姓名,电话,邮箱,留言,时间\n"
+                + messages.map(msg => 
+                    `"${msg.name}","${msg.phone}","${msg.email}","${msg.message.replace(/"/g, '""')}","${new Date(msg.timestamp).toLocaleString()}"`
+                ).join("\n");
+            
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "留言数据_" + new Date().toISOString().split('T')[0] + ".csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+        
+        // 联系表单提交
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // 保存到本地存储
+            const messages = JSON.parse(localStorage.getItem('messages') || '[]');
+            messages.push({
+                name,
+                phone,
+                email,
+                message,
+                timestamp: Date.now()
+            });
+            localStorage.setItem('messages', JSON.stringify(messages));
+            
+            // 显示成功消息
+            alert('提交成功！我们会尽快与您联系。');
+            
+            // 重置表单
+            contactForm.reset();
+            
+            // 更新留言列表
+            if (!adminPanel.classList.contains('-translate-x-full')) {
+                loadMessages();
+            }
+        });
+        
+        // 图表初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 市场规模分析图表
+            const marketSizeCtx = document.getElementById('marketSizeChart').getContext('2d');
+            new Chart(marketSizeCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['文化旅游市场', '养生食品市场', '研学旅行市场'],
+                    datasets: [{
+                        data: [58000, 2800, 1200],
+                        backgroundColor: ['#DC2626', '#059669', '#D97706'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed;
+                                    return `${label}: ${value}亿元`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 目标客群分布图表
+            const customerCtx = document.getElementById('customerChart').getContext('2d');
+            new Chart(customerCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['文化旅游爱好者', '养生健康人群', '亲子家庭', '企业客户'],
+                    datasets: [{
+                        label: '人数（万）',
+                        data: [5000, 20000, 3000, 1000],
+                        backgroundColor: ['#DC2626', '#059669', '#D97706', '#92400E'],
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '万';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 收入模型图表
+            const revenueModelCtx = document.getElementById('revenueModelChart').getContext('2d');
+            new Chart(revenueModelCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['产品销售', '文旅体验', '内容变现', '政府项目'],
+                    datasets: [{
+                        data: [40, 35, 10, 15],
+                        backgroundColor: ['#DC2626', '#059669', '#D97706', '#92400E'],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                usePointStyle: true
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed;
+                                    return `${label}: ${value}%`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 营收预测图表
+            const revenueForecastCtx = document.getElementById('revenueForecastChart').getContext('2d');
+            new Chart(revenueForecastCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                    datasets: [{
+                        label: '营收（万元）',
+                        data: [50, 300, 1000, 2500, 4000],
+                        borderColor: '#DC2626',
+                        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#DC2626',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '万';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // 利润预测图表
+            const profitForecastCtx = document.getElementById('profitForecastChart').getContext('2d');
+            new Chart(profitForecastCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                    datasets: [{
+                        label: '净利润（万元）',
+                        data: [-9, 45, 150, 625, 2000],
+                        backgroundColor: function(context) {
+                            return context.parsed.y < 0 ? '#EF4444' : '#10B981';
+                        },
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '万';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLoginStatus();
+            
+            // 添加滚动动画观察器
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有需要动画的元素
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
